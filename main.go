@@ -86,6 +86,7 @@ func (cache *MetricsCache) Iter() <-chan MetricDataPoint {
 	return c
 }
 
+// CheckForMetric checks if a given metrics exists in the metric cache
 func (cache *MetricsCache) CheckForMetric(metric MetricDataPoint) bool {
 	for _, value := range cache.metrics {
 		if value.DeviceUUID == metric.DeviceUUID && value.MetricName == metric.MetricName {
