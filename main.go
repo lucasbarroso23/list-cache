@@ -58,6 +58,7 @@ func main() {
 
 }
 
+// Append safely appends a given metric to the cache metrics
 func (cache *MetricsCache) Append(metric MetricDataPoint) {
 	cache.Lock()
 	defer cache.Unlock()
