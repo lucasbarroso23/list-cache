@@ -65,6 +65,7 @@ func (cache *MetricsCache) Append(metric MetricDataPoint) {
 	cache.metrics = append(cache.metrics, metric)
 }
 
+// Iter runs through the metricsCache and safely sends the metrics to a channel
 func (cache *MetricsCache) Iter() <-chan MetricDataPoint {
 	c := make(chan MetricDataPoint)
 
